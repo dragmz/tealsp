@@ -14,7 +14,3 @@ git submodule update
 cd go-algorand
 ./scripts/configure_dev.sh
 make install
-
-cp ~/go/bin/tealsp.exe ../tealsp.exe
-
-ls -la

@@ -10,6 +10,7 @@ jobs:
         run: |
           chmod +x ci-build.sh
           ./ci-build.sh
+          cp ~/go/bin/tealsp ../tealsp
       - name: Prepare version file
         run: echo $GITHUB_SHA > version
       - name: Create release
