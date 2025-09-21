@@ -3,7 +3,7 @@ on: [workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -18,7 +18,7 @@ jobs:
           cd go-algorand
           ./scripts/configure_dev.sh
           make install
-          cp ~/go/bin/tealsp ../tealsp_linux_x64
+          cp ~/go/bin/tealsp ../tealsp_darwin_x64
       - name: Prepare version file
         run: echo $GITHUB_SHA > version
       - name: Create release
@@ -26,5 +26,5 @@ jobs:
         with:
           allowUpdates: true
           tag: dev
-          artifacts: "tealsp_linux_x64"
+          artifacts: "tealsp_darwin_x64"
           prerelease: true
