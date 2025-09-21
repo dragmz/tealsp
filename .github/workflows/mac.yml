@@ -18,7 +18,7 @@ jobs:
           cd go-algorand
           ./scripts/configure_dev.sh
           make install
-          cp ~/go/bin/tealsp ../tealsp_darwin_x64
+          cp ~/go/bin/tealsp ../tealsp_darwin_arm64
       - name: Prepare version file
         run: echo $GITHUB_SHA > version
       - name: Create release
@@ -26,5 +26,5 @@ jobs:
         with:
           allowUpdates: true
           tag: dev
-          artifacts: "tealsp_darwin_x64"
+          artifacts: "tealsp_darwin_arm64"
           prerelease: true
