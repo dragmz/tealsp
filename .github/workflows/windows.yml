@@ -19,11 +19,11 @@ jobs:
           echo 'Running in MSYS2!'
           ./ci-build.sh
       - name: Prepare version file
-        run: echo $GITHUB_SHA > version
+        run: echo $GITHUB_SHA > version_win32_x64
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
           tag: dev
-          artifacts: "tealsp_win32_x64.exe"
+          artifacts: "tealsp_win32_x64.exe,version_win32_x64"
           prerelease: true

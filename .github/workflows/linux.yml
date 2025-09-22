@@ -20,11 +20,11 @@ jobs:
           make install
           cp ~/go/bin/tealsp ../tealsp_linux_x64
       - name: Prepare version file
-        run: echo $GITHUB_SHA > version
+        run: echo $GITHUB_SHA > version_linux_x64
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
           tag: dev
-          artifacts: "tealsp_linux_x64"
+          artifacts: "tealsp_linux_x64,version_linux_x64"
           prerelease: true

@@ -20,11 +20,11 @@ jobs:
           make install
           cp ~/go/bin/tealsp ../tealsp_darwin_arm64
       - name: Prepare version file
-        run: echo $GITHUB_SHA > version
+        run: echo $GITHUB_SHA > version_darwin_arm64
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
           tag: dev
-          artifacts: "tealsp_darwin_arm64"
+          artifacts: "tealsp_darwin_arm64,version_darwin_arm64"
           prerelease: true
