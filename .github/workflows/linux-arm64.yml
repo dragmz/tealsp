@@ -1,0 +1,30 @@
+name: linux-arm64
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.4'      
+      - uses: actions/checkout@v3
+      - name: CI-Build
+        run: |
+          go version
+          git submodule init
+          git submodule update
+          cd go-algorand
+          ./scripts/configure_dev.sh
+          make install
+          cp ~/go/bin/tealsp ../tealsp_linux_arm64
+      - name: Prepare version file
+        run: echo $GITHUB_SHA > version_linux_arm64
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          tag: dev
+          artifacts: "tealsp_linux_arm64,version_linux_arm64"
+          prerelease: true
