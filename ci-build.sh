@@ -15,4 +15,4 @@ cd go-algorand
 ./scripts/configure_dev.sh
 make install
 
-cp ~/go/bin/tealsp.exe ../tealsp.exe
+cp ~/go/bin/tealsp.exe ../tealsp_win32_x64.exe
