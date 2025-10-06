@@ -1,4 +1,4 @@
 [submodule "go-algorand"]
 	path = go-algorand
 	url = https://github.com/dragmz/go-algorand
-	branch = tealsp
+	branch = lspint

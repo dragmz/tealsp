@@ -25,6 +25,6 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          tag: stable
+          tag: dev
           artifacts: "tealsp_linux_arm64,version_linux_arm64"
           prerelease: true
