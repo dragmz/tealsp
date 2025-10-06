@@ -26,4 +26,4 @@ jobs:
           allowUpdates: true
           tag: stable
           artifacts: "tealsp_win32_x64.exe,version_win32_x64"
-          prerelease: true
+          prerelease: false

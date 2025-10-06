@@ -27,4 +27,4 @@ jobs:
           allowUpdates: true
           tag: stable
           artifacts: "tealsp_linux_arm64,version_linux_arm64"
-          prerelease: true
+          prerelease: false

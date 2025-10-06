@@ -27,4 +27,4 @@ jobs:
           allowUpdates: true
           tag: stable
           artifacts: "tealsp_darwin_x64,version_darwin_x64"
-          prerelease: true
+          prerelease: false
