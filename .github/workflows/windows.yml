@@ -24,6 +24,6 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          tag: dev
+          tag: stable
           artifacts: "tealsp_win32_x64.exe,version_win32_x64"
           prerelease: true
